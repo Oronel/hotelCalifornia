@@ -43,12 +43,8 @@ class RegisterTableVC: UITableViewController {
         
         checkOutDatePicker.minimumDate = checkInDatePicker.date.addingTimeInterval(86400)
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch (indexPath.section, indexPath.row) {
             

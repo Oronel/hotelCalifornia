@@ -51,10 +51,21 @@ class RegisterTableVC: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch (indexPath.section, indexPath.row) {
+            
         case (checkInDatePickerIndexPath.section, checkInDatePickerIndexPath.row):
-            return 0
+            
+            if isCheckInDatePickerShown {
+                return 216.0
+            } else {
+                return 0
+            }
         case (checkOutDatePickerIndexPath.section, checkOutDatePickerIndexPath.row):
-            return 0
+           
+            if isCheckOutDatePickerShown {
+                return 216.0
+            } else {
+                return 0
+                }
         default:
             return 44.0
         }
@@ -64,6 +75,7 @@ class RegisterTableVC: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         switch (indexPath.section, indexPath.row) {
+            
         case (checkInDatePickerIndexPath.section,checkInDatePickerIndexPath.row):
             if isCheckInDatePickerShown{
                 isCheckInDatePickerShown = false
@@ -73,6 +85,21 @@ class RegisterTableVC: UITableViewController {
             }else{
                 isCheckInDatePickerShown = true
             }
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            
+        case (checkOutDatePickerIndexPath.section, checkOutDatePickerIndexPath.row - 1):
+            if isCheckOutDatePickerShown{
+                isCheckOutDatePickerShown = true
+            }else if isCheckInDatePickerShown {
+                isCheckInDatePickerShown = false
+                isCheckOutDatePickerShown = true
+            }else{
+                isCheckOutDatePickerShown = true
+            }
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            
         default:
             break
         }

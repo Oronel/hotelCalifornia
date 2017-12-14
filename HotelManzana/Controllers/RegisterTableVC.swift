@@ -76,7 +76,7 @@ class RegisterTableVC: UITableViewController {
         
         switch (indexPath.section, indexPath.row) {
             
-        case (checkInDatePickerIndexPath.section,checkInDatePickerIndexPath.row):
+        case (checkInDatePickerIndexPath.section,checkInDatePickerIndexPath.row - 1):
             if isCheckInDatePickerShown{
                 isCheckInDatePickerShown = false
             } else if isCheckOutDatePickerShown {
@@ -90,7 +90,7 @@ class RegisterTableVC: UITableViewController {
             
         case (checkOutDatePickerIndexPath.section, checkOutDatePickerIndexPath.row - 1):
             if isCheckOutDatePickerShown{
-                isCheckOutDatePickerShown = true
+                isCheckOutDatePickerShown = false
             }else if isCheckInDatePickerShown {
                 isCheckInDatePickerShown = false
                 isCheckOutDatePickerShown = true

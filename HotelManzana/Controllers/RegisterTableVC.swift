@@ -8,7 +8,13 @@
 
 import UIKit
 
-class RegisterTableVC: UITableViewController {
+class RegisterTableVC: UITableViewController, SelectRommTypeDelegate {
+    func didSelect(roomType: RoomType) {
+        self.roomType = roomType
+        updateRoomType()
+    }
+    
+    var roomType : RoomType?
 
     @IBOutlet weak var firstNameTxtField: UITextField!
     @IBOutlet weak var lastNameTxtField: UITextField!
@@ -26,6 +32,10 @@ class RegisterTableVC: UITableViewController {
     @IBOutlet weak var numberOfChildrenStepper: UIStepper!
     
     @IBOutlet weak var wifiSwitch: UISwitch!
+    
+    @IBOutlet weak var roomTypeLbl: UILabel!
+    
+    
     
     let checkInDatePickerIndexPath = IndexPath(row: 1, section: 1)
     let checkOutDatePickerIndexPath = IndexPath(row: 3, section: 1)
@@ -53,12 +63,21 @@ class RegisterTableVC: UITableViewController {
         
         updateDateView()
         updateNumberOfGuests()
+        updateRoomType()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func updateRoomType() {
+        if let roomType = roomType {
+            roomTypeLbl.text = roomType.name
+        }else{
+            roomTypeLbl.text = "Not Set"
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -169,4 +188,14 @@ class RegisterTableVC: UITableViewController {
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         updateNumberOfGuests()
     }
+    override func prepare(for segue: UIStoryboardSegue, sender:
+        Any?) {
+        if segue.identifier == "SelectRoomType" {
+            let destinationViewController = segue.destination as?
+            SelectRoomTypeTableViewController
+            destinationViewController?.delegate = self
+            destinationViewController?.roomType = roomType
+        }
+    }
+   
 }

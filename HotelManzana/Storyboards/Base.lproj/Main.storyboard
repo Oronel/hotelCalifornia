@@ -214,8 +214,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ROz-EN-FNt">
-                                                    <rect key="frame" x="265" y="7" width="94" height="29"/>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ROz-EN-FNt">
+                                                    <rect key="frame" x="265" y="8" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="stepperValueChanged:" destination="wT1-TU-ZeH" eventType="valueChanged" id="NeJ-Oe-mFi"/>
                                                     </connections>
@@ -230,6 +230,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="ROz-EN-FNt" secondAttribute="trailing" constant="16" id="0YN-ez-P0Z"/>
                                                 <constraint firstItem="ROz-EN-FNt" firstAttribute="leading" secondItem="QBJ-oA-XvK" secondAttribute="trailing" constant="8" id="M8p-hs-geQ"/>
+                                                <constraint firstItem="ROz-EN-FNt" firstAttribute="centerY" secondItem="QBJ-oA-XvK" secondAttribute="centerY" id="gMW-i4-Uri"/>
                                                 <constraint firstItem="QBJ-oA-XvK" firstAttribute="centerY" secondItem="j1U-hT-Vj2" secondAttribute="centerY" id="mW6-7f-p6k"/>
                                                 <constraint firstItem="j1U-hT-Vj2" firstAttribute="leading" secondItem="1Y1-cf-jdi" secondAttribute="leadingMargin" constant="16" id="v1W-If-Lnq"/>
                                                 <constraint firstItem="j1U-hT-Vj2" firstAttribute="centerY" secondItem="1Y1-cf-jdi" secondAttribute="centerY" id="zmS-tF-zOT"/>
@@ -249,8 +250,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Mh3-Gc-t1A">
-                                                    <rect key="frame" x="265" y="7" width="94" height="29"/>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Mh3-Gc-t1A">
+                                                    <rect key="frame" x="265" y="8" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="stepperValueChanged:" destination="wT1-TU-ZeH" eventType="valueChanged" id="GNr-8n-pXb"/>
                                                     </connections>
@@ -268,6 +269,7 @@
                                                 <constraint firstItem="N5b-mn-XSo" firstAttribute="leading" secondItem="Jdv-mv-CX0" secondAttribute="leadingMargin" constant="16" id="DTs-Ui-4xH"/>
                                                 <constraint firstAttribute="trailing" secondItem="Mh3-Gc-t1A" secondAttribute="trailing" constant="16" id="SQL-XH-Uiv"/>
                                                 <constraint firstItem="Mh3-Gc-t1A" firstAttribute="leading" secondItem="Edy-7w-2nV" secondAttribute="trailing" constant="8" id="Urq-LX-1Xv"/>
+                                                <constraint firstItem="Mh3-Gc-t1A" firstAttribute="centerY" secondItem="Edy-7w-2nV" secondAttribute="centerY" id="tYx-DM-fSd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

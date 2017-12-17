@@ -283,6 +283,31 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7MS-vy-p8n" id="G0Z-p0-UVV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WiFi (per day)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E9-he-mkz">
+                                                    <rect key="frame" x="16" y="12" width="107" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GG3-co-Zu4">
+                                                    <rect key="frame" x="318" y="7" width="51" height="31"/>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxP-eB-sG2">
+                                                    <rect key="frame" x="269" y="12" width="33" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8E9-he-mkz" firstAttribute="centerY" secondItem="G0Z-p0-UVV" secondAttribute="centerY" id="3yQ-sM-Thu"/>
+                                                <constraint firstItem="wxP-eB-sG2" firstAttribute="centerY" secondItem="8E9-he-mkz" secondAttribute="centerY" id="DPM-3K-dou"/>
+                                                <constraint firstItem="GG3-co-Zu4" firstAttribute="centerY" secondItem="wxP-eB-sG2" secondAttribute="centerY" id="NRE-0F-1uL"/>
+                                                <constraint firstItem="8E9-he-mkz" firstAttribute="leading" secondItem="G0Z-p0-UVV" secondAttribute="leadingMargin" constant="8" id="NhZ-9G-1pM"/>
+                                                <constraint firstItem="GG3-co-Zu4" firstAttribute="leading" secondItem="wxP-eB-sG2" secondAttribute="trailing" constant="16" id="S4a-hX-27i"/>
+                                                <constraint firstAttribute="trailing" secondItem="GG3-co-Zu4" secondAttribute="trailing" constant="8" id="U3b-gV-GTN"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>

@@ -19,6 +19,13 @@ class RegisterTableVC: UITableViewController {
     @IBOutlet weak var checkOutDateLbl: UILabel!
     @IBOutlet weak var checkOutDatePicker: UIDatePicker!
     
+    @IBOutlet weak var numberOfAdultsLabel: UILabel!
+    @IBOutlet weak var numberOfAdultsStepper: UIStepper!
+    
+    @IBOutlet weak var numberOfChildrenLabel: UILabel!
+    @IBOutlet weak var numberOfChildrenStepper: UIStepper!
+    
+    
     let checkInDatePickerIndexPath = IndexPath(row: 1, section: 1)
     let checkOutDatePickerIndexPath = IndexPath(row: 3, section: 1)
     
@@ -44,6 +51,7 @@ class RegisterTableVC: UITableViewController {
         checkOutDatePicker.minimumDate = checkInDatePicker.date.addingTimeInterval(86400)
         
         updateDateView()
+        updateNumberOfGuests()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -130,11 +138,20 @@ class RegisterTableVC: UITableViewController {
         
         checkInDateLbl.text = dateFormatter.string(from: checkInDatePicker.date)
         checkOutDateLbl.text = dateFormatter.string(from: checkOutDatePicker.date)
-        }
+        
+    }
+    
+    func updateNumberOfGuests() {
+        numberOfAdultsLabel.text = "\(Int(numberOfAdultsStepper.value))"
+        numberOfChildrenLabel.text = "\(Int(numberOfChildrenStepper.value))"
+    }
     
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         checkOutDatePicker.minimumDate = checkInDatePicker.date.addingTimeInterval(86400)
         updateDateView()
     }
     
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        updateNumberOfGuests()
+    }
 }

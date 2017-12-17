@@ -124,12 +124,18 @@ class RegisterTableVC: UITableViewController {
         let checkInDate = checkInDatePicker.date
         let checkOutDate = checkOutDatePicker.date
         
+        let numberOfAdults = Int(numberOfAdultsStepper.value)
+        let numberOfChildren = Int(numberOfChildrenStepper.value)
+        
         print("first name: \(firstName)")
         print("last name: \(lastName)")
         print("email: \(email)")
         
         print("check in date: \(checkInDate)")
         print("check out date: \(checkOutDate)")
+        
+        print("number of adults: \(numberOfAdults)")
+        print("number of children: \(numberOfChildren)")
     }
     
     func updateDateView() {

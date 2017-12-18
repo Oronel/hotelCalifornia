@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0488B6461FE1531900598EF5 /* RegisterTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488B6451FE1531900598EF5 /* RegisterTableVC.swift */; };
+		0488B6461FE1531900598EF5 /* AddRegisterTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488B6451FE1531900598EF5 /* AddRegisterTableVC.swift */; };
 		E35B77691FE1213F00E6BBFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B77681FE1213F00E6BBFC /* AppDelegate.swift */; };
 		E35B776E1FE1213F00E6BBFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35B776C1FE1213F00E6BBFC /* Main.storyboard */; };
 		E35B77701FE1213F00E6BBFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35B776F1FE1213F00E6BBFC /* Assets.xcassets */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0488B6451FE1531900598EF5 /* RegisterTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableVC.swift; sourceTree = "<group>"; };
+		0488B6451FE1531900598EF5 /* AddRegisterTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegisterTableVC.swift; sourceTree = "<group>"; };
 		E35B77651FE1213F00E6BBFC /* HotelManzana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelManzana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35B77681FE1213F00E6BBFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35B776D1FE1213F00E6BBFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		E35B777D1FE1217100E6BBFC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0488B6451FE1531900598EF5 /* RegisterTableVC.swift */,
+				0488B6451FE1531900598EF5 /* AddRegisterTableVC.swift */,
 				E3DA9E3F1FE6A697004E071C /* SelectRoomTypeTableViewController.swift */,
 			);
 			path = Controllers;
@@ -167,7 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3DA9E401FE6A697004E071C /* SelectRoomTypeTableViewController.swift in Sources */,
-				0488B6461FE1531900598EF5 /* RegisterTableVC.swift in Sources */,
+				0488B6461FE1531900598EF5 /* AddRegisterTableVC.swift in Sources */,
 				E35B777B1FE1216300E6BBFC /* Registration.swift in Sources */,
 				E35B77691FE1213F00E6BBFC /* AppDelegate.swift in Sources */,
 			);

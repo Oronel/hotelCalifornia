@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterTableVC: UITableViewController, SelectRommTypeDelegate {
+class AddRegisterTableVC: UITableViewController, SelectRommTypeDelegate {
     func didSelect(roomType: RoomType) {
         self.roomType = roomType
         updateRoomType()
@@ -149,6 +149,8 @@ class RegisterTableVC: UITableViewController, SelectRommTypeDelegate {
         
         let wifiOn = wifiSwitch.isOn
         
+        let roomChoice = roomType?.name ?? "Not Set"
+        
         print("first name: \(firstName)")
         print("last name: \(lastName)")
         print("email: \(email)")
@@ -160,6 +162,8 @@ class RegisterTableVC: UITableViewController, SelectRommTypeDelegate {
         print("number of children: \(numberOfChildren)")
         
         print("has wifi: \(wifiOn)")
+        
+        print("RoomType: \(roomChoice)")
     }
     
     func updateDateView() {
@@ -191,11 +195,10 @@ class RegisterTableVC: UITableViewController, SelectRommTypeDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender:
         Any?) {
         if segue.identifier == "SelectRoomType" {
-            let destinationViewController = segue.destination as?
-            SelectRoomTypeTableViewController
+            let destinationViewController = segue.destination as? SelectRoomTypeTableViewController
+            
             destinationViewController?.delegate = self
             destinationViewController?.roomType = roomType
         }
     }
-   
 }

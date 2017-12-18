@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol SelectRommTypeDelegate {
+protocol SelectRoomTypeDelegate {
     func didSelect(roomType: RoomType)
 }
 
 class SelectRoomTypeTableViewController: UITableViewController {
 
     var roomType: RoomType?
-    var delegate: SelectRommTypeDelegate?
+    var delegate: SelectRoomTypeDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

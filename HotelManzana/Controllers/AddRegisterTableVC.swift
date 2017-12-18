@@ -10,22 +10,7 @@ import UIKit
 
 class AddRegisterTableVC: UITableViewController, SelectRoomTypeDelegate {
     
-    var registratin: Registration? {
-        guard let roomType = roomType else {
-            return nil
-        }
-        let firstName = firstNameTxtField.text ?? ""
-        let lastName = lastNameTxtField.text ?? ""
-        let email = emailTxtField.text ?? ""
-        let checkInDate = checkInDatePicker.date ?? ""
-        let checkOutDate = checkOutDatePicker.date ?? ""
-        
-        let numberOfAdults = Int(numberOfAdultsStepper.value)
-        let numberOfChildren = Int(numberOfChildrenStepper.value)
-        let hasWifi = wifiSwitch.isOn
-        
-        return Registration(firstName: firstName, lastName: lastName, emailAddress: email, checkInDate: checkInDate, checkOutDate: checkOutDate, numberOfAdults: numberOfAdults, numberOfChildren: numberOfChildren, roomType: roomType, wifi: hasWifi)
-    }
+  
     
     func didSelect(roomType: RoomType) {
         self.roomType = roomType
@@ -53,6 +38,23 @@ class AddRegisterTableVC: UITableViewController, SelectRoomTypeDelegate {
     
     @IBOutlet weak var roomTypeLbl: UILabel!
     
+    
+    var registration: Registration? {
+        guard let roomType = roomType else {
+            return nil
+        }
+        let firstName = firstNameTxtField.text ?? ""
+        let lastName = lastNameTxtField.text ?? ""
+        let email = emailTxtField.text ?? ""
+        let checkInDate = checkInDatePicker.date
+        let checkOutDate = checkOutDatePicker.date
+        
+        let numberOfAdults = Int(numberOfAdultsStepper.value)
+        let numberOfChildren = Int(numberOfChildrenStepper.value)
+        let hasWifi = wifiSwitch.isOn
+        
+        return Registration(firstName: firstName, lastName: lastName, emailAddress: email, checkInDate: checkInDate, checkOutDate: checkOutDate, numberOfAdults: numberOfAdults, numberOfChildren: numberOfChildren, roomType: roomType, wifi: hasWifi)
+    }
     
     
     let checkInDatePickerIndexPath = IndexPath(row: 1, section: 1)
@@ -210,6 +212,7 @@ class AddRegisterTableVC: UITableViewController, SelectRoomTypeDelegate {
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         updateNumberOfGuests()
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender:
         Any?) {
         if segue.identifier == "SelectRoomType" {

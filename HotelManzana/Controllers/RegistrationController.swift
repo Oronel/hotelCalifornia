@@ -10,7 +10,7 @@ import UIKit
 
 class RegistrationController: UITableViewController {
 
-    var registration: [Registration] = []
+    var registrations: [Registration] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,19 +36,35 @@ class RegistrationController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return registration.count
+        return registrations.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RegistrationCell", for: indexPath)
+        
+        let registration = registrations[indexPath.row]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        
+        cell.textLabel?.text = registration.firstName + " " + registration.lastName
+        cell.detailTextLabel?.text = dateFormatter.string(from: registration.checkInDate) + "-" + dateFormatter.string(from: registration.checkOutDate) + ": " + registration.roomType.name
+        
 
         // Configure the cell...
 
         return cell
     }
     
-
+    @IBAction func unwindFromAddRegistration(unwindSegue: UIStoryboardSegue) {
+        guard let addRegistrationSegue = unwindSegue.source as? AddRegisterTableVC,
+        let registration = addRegistrationSegue.registration else {return}
+        
+        registrations.append(registration)
+        tableView.reloadData()
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
